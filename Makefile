@@ -4,10 +4,10 @@ NAME=libasm.a
 OBJ_DIR=obj/
 SRC_DIR=src/
 
-SRCS= $(addprefix $(SRC_DIR), ft_strlen.s ft_write.s ft_strcpy.s ft_strcmp.s ft_read.s)
+SRCS= $(addprefix $(SRC_DIR), ft_strlen.s ft_write.s ft_strcpy.s ft_strcmp.s ft_read.s ft_strdup.s)
 OBJS= $(patsubst $(SRC_DIR)%.s, $(OBJ_DIR)%.o, $(SRCS))
 
-ASMFLAGS=-f elf64
+ASMFLAGS=-f elf64 -g
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.s
 	@mkdir -p $(dir $@)
@@ -23,6 +23,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+
 
 re: fclean all
 

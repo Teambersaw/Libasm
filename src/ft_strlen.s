@@ -8,7 +8,7 @@ ft_strlen:
 
 	.loop:
 		cmp		byte [rdi + rcx], 0 ; compare current char with null terminator
-		je		.end
+		je		.end ; if null terminator, end loop
 		inc		rcx
 		jmp		.loop
 

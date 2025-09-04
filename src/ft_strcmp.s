@@ -9,11 +9,11 @@ ft_strcmp:
 		mov	al, byte [rdi + rcx] ; Load byte from str1
 		mov	dl, byte [rsi + rcx] ; Load byte from str2
 		cmp al, dl
-		jne	.end
+		jne	.end ; if not equal, end
 		cmp al, 0
-		je .end
+		je .end ; if null terminator, end
 		cmp dl, 0
-		je .end
+		je .end ; if null terminator, end
 		inc rcx
 		jmp	.loop
 	
